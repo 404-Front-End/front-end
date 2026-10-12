@@ -1,0 +1,292 @@
+/* VARIAVEIS GLOBAIS START */
+
+   :root {
+      /* COLORS */
+      --background_color_1: #000000;
+      --background_navbar_color: rgba(0, 0, 0, 0.541);
+      --borderline_navbar_color: rgba(99, 0, 145, 0.541);
+      --selection_color: rgba(85, 0, 165, 0.541);
+      --main_section_max_size_width: 2160px;
+   }
+
+/* VARIAVEIS GLOBAIS END */
+
+/* SELEÇAO DO CURSOR START */
+
+   ::selection {
+      background: var(--selection_color);
+   }
+
+/* SELEÇAO DO CURSOR END */
+
+/* CONFIGURAÇÃO GLOBAL START */
+
+   * {
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+   }
+
+/* CONFIGURAÇÃO GLOBAL END */
+
+/* CORPO DO HTML START */
+
+   body {
+      display:flex;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      min-width: 320px;
+      background: var(--background_color_1);
+   }
+
+/* CORPO DO HTML END */
+
+/* TESTE PARA FORÇAR SCROLL "NAO MEXA" */
+
+   .space_test {
+         width: 100%;
+         height: 500px;
+         background-color: royalblue;
+   }
+
+/* TESTE PARA FORÇAR SCROLL "NAO MEXA" */
+
+/* BACKGROUND ANIMADO START */
+
+   .background_gradient_general {
+      z-index: 0; /* camada 0*/
+      background: radial-gradient(
+      rgb(54, 0, 116),
+      rgb(45, 18, 88),
+      rgb(36, 0, 59),
+      rgb(5, 5, 5)
+      );
+      width: 100%;
+      height: 100%;
+      position: fixed; /* posição fixa*/
+      transform: scale(1);
+      overflow-x: hidden; /* ocultar overflow x 1*/
+      overflow-y: hidden; /* ocultar overlow y*/
+      animation: loop_background_gradient 15s ease-out infinite;
+   }
+
+/* BACKGROUND ANIMADO END */
+
+/* SEÇÃO GERAL DE TODOS OS ELEMENTOS DO SITE START */
+
+   .main_section_all {
+      z-index: 1; /* camada 1*/
+      position: absolute;
+      width: 100%;
+      max-width: var(--main_section_max_size_width);
+   }
+
+/* SEÇÃO GERAL DE TODOS OS ELEMENTOS DO SITE END */
+
+/* TITULO GERAL START */
+
+   .titulo-geral {
+      color: white;
+      width: 100%;
+      font-size: 2rem;
+      font-weight: 700;
+   }
+
+/* TITULO GERAL END */
+
+/* NAVBAR DO SITE START */
+
+   .navbar {
+      position: relative;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      gap: 10px;
+      width: 100%;
+      transition: 0.35s all;
+   }
+
+   .logo {
+      display: flex;
+      gap: 10px;
+   }
+
+   .logo > img {
+      width: 150px;
+      height: 50px;
+   }
+
+   .menu {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      gap: 30px;
+      user-select: color;
+   }
+
+   .menu > a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700; /* texto em negrito */
+      font-size: 1.20rem; /* tamanho do texto */
+      transition: 0.35s all;
+   }
+
+   .menu > a:hover {
+      transform: scale(1.1);
+   }
+
+   /* ícone de pesquisa */
+   .search_box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+   }
+
+   .search_box > input {
+      width: 200px;
+      height: 30px;
+      padding: 5px;
+      color: white;
+      background-color: transparent;
+      border: 2px solid white;
+      border-radius: 5px;
+   }
+
+   .search_icon {
+      width: 25px;
+      height: 25px;
+   }
+
+   .perfil-container {
+      position: relative;
+      display: inline-block;
+   }
+
+   .perfil_botao {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+   }
+
+   .perfil_botao img{
+      width: 45px;
+      height: 45px;
+      /* border-radius: 4px; */
+   }
+
+   .perfil_botao .seta {
+      width: 30px;
+      height: 20px;
+   }
+
+   .dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #181818;
+      width: 180px;
+      border: 1px solid #333;
+      border-radius: 4px;
+      padding: 8px 0;
+   }
+
+   .menu-pf {
+      width: 25px;
+      height: 25px;
+      display: none;
+   }
+
+   .seta {
+      transition: transform 0.3s ease;
+   }
+
+   .seta:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+   }
+
+   .perfil_label {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      cursor: pointer;
+      transition: 0.35s all;
+   }
+
+   .perfil_container:has(.menu-pf:checked) .dropdown {
+      display: block;
+      transform: translateY(10px) translateX(-10px);
+   }
+
+   .perfil_container:has(.menu-pf:checked) .seta {
+      transform: rotate(180deg);
+   }
+
+   .dropdown a {
+      display: block;
+      padding: 8px 16px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+   }
+
+   .dropdown a:hover {
+      background-color: #333;
+   }
+
+footer {
+   background-color: rgb(0, 0, 0);
+   display: inline;
+   padding: 20px;
+   color: white;
+   position: fixed;
+   text-align: center;
+   font-size: 22px;
+   width: 100%;
+   bottom: 0;
+}
+
+footer a {
+   color: white;
+   text-decoration: none;
+   font-weight: 700; /* texto em negrito */
+   font-size: 1.20rem; /* tamanho do texto */
+   transition: 0.35s all;
+}
+
+/* SEÇÃO DE CONTEUDO DO SITE START */
+
+   .main_content {
+      padding: 20px;
+   }
+
+/* SEÇÃO DE CONTEUDO DO SITE END */
+
+
+/* KEYFRAMES DE ANIMAÇÃO DO SITE START */
+
+   /* ANIMAÇÃO DO BACKGROUND GRADIENT */
+   @keyframes loop_background_gradient {
+      /* estagios da animação */
+      0% {
+         transform: scale(1);
+      }
+      50% {
+         transform: scale(2);
+      }
+      100% {
+         transform: scale(1);
+      }
+   }
+
+/* KEYFRAMES DE ANIMAÇÃO DO SITE END */
