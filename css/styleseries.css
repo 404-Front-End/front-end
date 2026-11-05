@@ -1,0 +1,608 @@
+   /* variaveis globais */
+   :root {
+      /* COLORS */
+      --background_color_1: #000000;
+      --background_navbar_color: rgba(0, 0, 0, 0.541);
+      --borderline_navbar_color: rgba(99, 0, 145, 0.541);
+      --selection_color: rgba(121, 70, 168, 0.541);
+      --main_section_max_size_width: 2160px;
+   }
+
+   ::selection {
+      background: var(--selection_color);
+   }
+   
+   /* ----------------------------------------------------------------- */
+   
+   /* configuração global */
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      
+      /* font global */
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   /* body */
+   body {
+      background: var(--background_color_1);
+      
+      color: white;
+      min-width: 100vh;
+      overflow-x: hidden;
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   /* FORÇAR SCROLL "NAO MEXA" */
+   .space_test {
+         width: 100%;
+         height: 500px;
+         background-color: royalblue;
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   /* background animado gradient */
+   .background_gradient_general {
+      z-index: 0; /* camada 0*/
+      background: radial-gradient(#350231,#090213,#05000e,rgb(0, 0, 0));
+      width: 100%;
+      height: 100%;
+      position: fixed; /* posição fixa*/
+      transform: scale(1);
+      overflow-x: hidden; /* ocultar overflow x 1*/
+      overflow-y: hidden; /* ocultar overlow y*/
+      animation: loop_background_gradient 5s ease-out infinite;
+   }
+
+   /* ----------------------------------------------------------------- */
+   
+   /* seção geral de todos os elementos .main_section_all */
+   .main_section_all {
+      z-index: 1; /* camada 1*/
+      position: absolute;
+      width: 100%;
+      max-width: var(--main_section_max_size_width);
+   }
+
+   /* ----------------------------------------------------------------- */
+   
+   /* titulo geral */
+   .titulo-geral {
+      color: white;
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      width: fit-content;
+      margin-bottom: 1px;
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   /* NAVBAR DO SITE START */
+
+   .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      width: 100%;
+      padding: 15px 35px;
+      
+      background: transparent;
+      backdrop-filter: blur(12px);
+
+      /* border-bottom: 1px solid rgba(255, 255, 255, 0.08); */
+      
+      transition: 
+         background-color 0.4s ease, 
+         backdrop-filter 0.4s ease, 
+         border-color 0.4s ease;
+   }
+
+   .navbar.scrolled {
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(12px);
+      /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
+   }
+
+   /* ----------------------------------------------------------------- */
+   
+   /* configuração da logotipo */
+   .logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+   }
+
+   .logo > img {
+      display: block;
+      width: 150px;
+      height: auto;
+   }
+
+   /* ----------------------------------------------------------------- */
+   
+   /* seção menu */
+   .menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+   }
+
+   .menu > a {
+      color: white;
+      text-decoration: none;
+      
+      font-size: 1.4rem; /* tamanho do texto */
+      font-weight: 700; /* texto em negrito */
+
+      padding: 12px 15px;
+      border-radius: 20px;
+      
+      transition: 0.35s ease;
+   }
+
+   .menu > a:hover {
+      background-color: rgba(255, 255, 255, 0.12)
+   }
+
+   .menu > a.active {
+      background: linear-gradient(
+         135deg,
+         #6500c9,
+         #9400ff
+      );
+
+      box-shadow: 0 4px 15px rgba(145, 0, 255, 0.35);
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   /* ícone de pesquisa */
+   .search_box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      width: 40px;
+      height: 40px;
+
+      border-radius: 50%;
+      cursor: pointer;
+
+      transition: 0.2s ease;
+   }
+
+   .search_box:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+      transform: scale(1.1);
+   }
+
+   .search_box > input {
+      width: 200px;
+      height: 30px;
+      padding: 5px;
+      color: white;
+      background-color: transparent;
+      border: 2px solid white;
+      border-radius: 5px;
+   }
+
+   .search_icon {
+      width: 25px;
+      height: 25px;
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   /* Perfil */
+
+   .perfil-container {
+      position: relative;
+
+   }
+
+   .perfil_botao {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+   }
+
+   .perfil_label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   /* ícone da foto de perfil */
+
+   .foto-perfil {
+      width: 40px;
+      height: 40px;
+      border-radius: 7px;
+      object-fit: cover;
+   }
+
+   .perfil_botao .foto-perfil {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      transition: 0.3s ease;
+   }
+
+   .perfil_botao .seta {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.3s ease;
+   }
+   
+   .perfil_botao img{
+      width: 45px;
+      height: 45px;
+      /* border-radius: 4px; */
+   }
+   
+   .perfil_label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+   }
+   
+   .perfil_container:has(.menu-pf:checked) .dropdown {
+      display: block;
+      transform: translateY(10px) translateX(-10px);
+   }
+   
+   .perfil_container:has(.menu-pf:checked) .seta {
+      transform: rotate(180deg);
+   }
+   
+   /* ----------------------------------------------------------------- */
+
+   /* esconder checkbox */
+   .menu-pf {
+      display: none;
+   }
+   
+   /* ----------------------------------------------------------------- */
+
+   /* seção dropdown */
+
+   .dropdown {
+      position: absolute;
+      right: 0;
+
+      display: none;
+      flex-direction: column;
+      
+      width: 200px;
+      padding: 8px;
+
+      background: rgba(34, 34, 34, 0.97);
+      border-radius: 12px;
+
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+
+      transform: translateY(-10px);
+
+      transition: 0.3s ease;
+   }
+   
+   .dropdown a {
+      color: white;
+      text-decoration: none;
+      
+      padding: 12px;
+      border-radius: 8px;
+
+      display: block;
+      font-weight: 700;
+      font-size: 1rem; /* tamanho do texto */
+      transition: 0.25s ease;
+   }
+
+   .dropdown a:hover {
+      background: rgba(107, 107, 107, 0.25);
+   }
+
+   /* ----------------------------------------------------------------- */
+   
+   /* icone seta do dropdown */
+   .seta {
+      width: 15px;
+      height: 15px;
+      transition: transform 0.3s ease;
+   }
+
+   .seta:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+   }
+
+   /* ----------------------------------------------------------------- */
+   
+   /* footer */
+
+   footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      
+      font-size: 22px;
+      text-align: center;
+      height: 2.5rem;
+      
+      background-color: rgba(0, 0, 0, 0.37);
+      color: white;
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   .main_content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 30px;
+      margin-bottom: 2px;
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   /* Carrossel */
+   .carrossel {
+      position: relative;
+      width: 100%;
+      max-width: 1600px;
+      padding: 20px;
+      margin: 40px auto;
+      overflow: visible;
+      border-radius: 20px;
+   }
+
+   .titulo-categoria {
+      color: rgb(255, 255, 255);
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: left;
+      margin-bottom: 0px;
+   }
+
+   .janela-carrossel {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 20px;
+   }
+
+   .container-carrossel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      transform: translateX(0);
+
+   }
+
+   .container-carrossel img {
+      width: 90%;
+      padding: 20px; 
+      border-radius: 50px;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+
+      /* transição */
+      transition: transform 0.3s ease;
+      cursor: pointer;
+
+   }
+
+   .container-carrossel img:hover {
+      transform: scale(1.08);
+   }
+
+   /* Botões de controle do Carrossel */
+   .botoes-controle {
+         position: absolute;
+         top: 55%;
+         left: 0px;
+         right: 0px;
+         
+         display: flex;
+         justify-content: space-between;
+         
+         transform: translateY(-50%);
+         pointer-events: none;
+      }
+
+   .botoes-controle button {
+      width: 45px;
+      height: 45px;
+      
+      border: none;
+      font-size: 30px;
+      font-weight: bold;
+      
+      pointer-events: all;
+      cursor: pointer;
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      border-radius: 50%;
+      
+      background: transparent; /* sem fundo */
+      color: white;
+      
+      transition: 0.35s all;
+   }
+
+   .botoes-controle button:hover {
+      transform: scale(1.3);
+      opacity: 1;
+   }
+
+   .botao-voltar {
+      margin-left: -35px;
+   }
+
+   .botao-avancar {
+      margin-right: -35px;
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   /* seção hero */
+   .hero {
+      position: relative;
+      
+      display: flex;
+      align-items: center;
+
+      width: 90%;
+      max-width: 2000px;
+      margin: 20px auto;
+      
+      height: 550px;
+
+      border-radius: 20px;
+      overflow: hidden;
+
+      background-image:
+         linear-gradient(
+            to right,
+            #000000 0%,
+            rgba(0, 0, 0, 0.95) 25%,
+            rgba(2, 2, 2, 0.4) 75%,
+            transparent 100%
+        ),
+        url("/assets/img/cris_season1.jpg");
+      
+        background-size: cover;
+        background-position: center;
+
+        padding: 0 7%;
+        box-sizing: border-box;
+   }
+
+   /* titulo hero */
+   .hero_content h1 {
+      font-size: 5rem;
+      font-weight: 900;
+
+      line-height: 1.1;
+
+      margin-bottom: 20px;
+   }
+
+   /* descrição hero */
+   .hero_content p {
+      font-size: 1.8rem;
+      line-height: 2.5;
+
+      color: #ffffff;
+
+      margin-bottom: 25px;
+   }
+
+   .hero_content .tags {
+      font-size: 20px;
+      font-weight: 700;
+      word-spacing: 10px;
+
+   }
+
+   .hero_content .descrição {
+      font-size: 22px;
+      color: rgb(255, 255, 255);
+      margin-top: -25px;
+      line-height: 1.5;
+   }
+
+   /* hero buttons */
+   .hero_buttons {
+      display: flex;
+      align-items: center;
+      gap:  15px;
+   }
+
+   /* botao assistir */
+   .btn_assistir {
+      background: linear-gradient(135deg, #6500c9, #9400ff);
+      color: white;
+
+      border: none;
+      border-radius: 20px;
+
+      padding: 15px 25px;
+
+      font-size: 1.3rem;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition: 0.5s ease;
+   }
+
+   .btn_assistir:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20 rgba(145, 0, 255, 0.5);
+   }
+
+   .btn_lista {
+      background: rgba(255, 255, 255, 0.1);
+
+      color: white;
+
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+
+      padding: 15px 25px;
+
+      font-size: 1.2rem;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition: 0.5s ease;
+   }
+
+   .btn_lista:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+   }
+
+   /* KEYFRAMES DE ANIMAÇÃO DO SITE START */
+   /* ANIMAÇÃO DO BACKGROUND GRADIENT */
+   @keyframes loop_background_gradient {
+      /* estagios da animação */
+      0% {
+         transform: scale(1);
+      }
+      50% {
+         transform: scale(2);
+      }
+      100% {
+         transform: scale(1);
+      }
+   }
+
+   /* KEYFRAMES DE ANIMAÇÃO DO SITE END */

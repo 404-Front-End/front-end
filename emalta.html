@@ -1,80 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cineon+</title>
-        <link rel="stylesheet" href="./css/style.css">
-        <link rel="icon" type="" href="/assets/C_LOGO.png">
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cineon+</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="/js/script.js"></script>
+    <link rel="icon" type="" href="/assets/C_LOGO.png"/>
+  </head>
 
-    <body>
-    
-        <!--  BACKGROUND DEGRADÊ -->
-        <div class="background_gradient_general">
+  <body>
+    <!--  BACKGROUND DEGRADÊ -->
+    <div class="background_gradient_general"></div>
+
+
+    <!-- Navbar -->
+    <section class="main_section_all">
+      <header class="navbar">
+        
+        <div class="logo">
+          <a href="index.html">
+            <img src="./assets/C_ANIMADO.svg" alt="logo" width="150px"/>
+          </a>
         </div>
 
-        <section class="main_section_all">
+        <!-- Nav -->
+        <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="series.html">Séries</a>
+            <a href="filmes.html">Filmes</a>
+            <a href="aovivo.html">Ao vivo</a>
+            <a href="esportes.html">Esportes</a>
+            <a href="emalta.html" class="active">Em alta</a>
+            <a href="minhalista.html">Minha lista</a>
 
-            <header class="navbar">
+            <!-- Botão pesquisa -->
+          <div class="search_box">
+            <img src="./assets/search.svg" alt="input_seach_icon" class="search_icon"/>
+          </div>
 
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="./assets/C_ANIMADO.svg" alt="logo" width="110px">
-                    </a>
-                </div>
+          <!-- Perfil -->
+        <div class="perfil_container">
+            <div class="perfil_botao">
+                
+                <label for="menu-pf" class="perfil_label">
+                    <img class="foto-perfil" src="/assets/profile.png" alt="perfil"/>
+                    <img class="seta" src="/assets/seta.svg" alt="seta" />
+                </label>
 
-                <nav class="menu">
-                    <a href="index.html">Início</a>
-                    <a href="series.html">Séries</a>
-                    <a href="filmes.html">Filmes</a>
-                    <a href="aovivo.html">Ao vivo</a>
-                    <a href="esportes.html">Esportes</a>
-                    <a href="emalta.html">Em alta</a>
-                    <a href="minhalista.html">Minha lista</a>
+                <input type="checkbox" name="menu-pf" id="menu-pf" class="menu-pf"/>
+            </div>
 
-                    <!-- Botão pesquisa -->
-                    <div class="search_box">
-                        <img src="./assets/search.svg" alt="input_seach_icon"class="search_icon">
-                    </div>
-                    
-                    <!-- Perfil -->
-                    <div class="perfil_container">
-                        <div class="perfil_botao">
-                            
-                            <label for="menu-pf" class="perfil_label">
-                                <img class="foto-perfil" src="/assets/profile.png" alt="perfil">
-                                <img class="seta" src="/assets/seta.svg" alt="seta">
-                            </label>
+            <!-- Dropdown -->
+            <div class="dropdown">
+                <a href="perfil.html">Gerenciar perfis</a>
+                <a href="configuracoes.html">Configurações</a>
+                <a href="ajuda.html">Ajuda</a>
+                <hr>
+                <a href="#">Sair</a>
+            </div>
+        </div>
+        </nav>
+      </header>
 
-                            <input type="checkbox" name="menu-pf" id="menu-pf" class="menu-pf">
-                        </div>
+      <!-- <section class="main_content">
+        <div class="titulo-geral">Pagina Inicial</div>
+      </section> -->
 
-                        <div class="dropdown">
-                            <a href="perfil.html">Gerenciar perfis</a>
-                            <a href="configuracoes.html">Configurações</a>
-                            <a href="ajuda.html">Ajuda</a>
-                            <hr>
-                            <a href="#">Sair</a>
-                        </div>
-                    
-                    </div>
-                </nav>
-            </header>
+      <!-- Carrossel -->
+      <section>
+        <div class="carrossel">
+          
+          <h1 class="titulo-categoria">
+            Novidades no Cineon+
+          </h1>
 
-            <section class="main_content">
-                <div class="titulo-geral">Em alta</div>
-            </section>
+          <div class="janela-carrossel">
 
-            <footer>
-                <p>&copy; Cineon+. Todos os direitos reservados</p>
-                <!-- <div class="links">
-                    <a href="">Contato</a>
-                </div> -->
-            </footer>
-            
-        </section>
+            <div class="container-carrossel">
+              <img src="/assets/img/karetekid.png" alt="karetekid"/>
+              <img src="/assets/img/arremessofinal.png" alt="Velozes e Furiosos"/>
+              <img src="/assets/img/ricky.png" alt="ricky"/>
+              <img src="/assets/img/tyson.png" alt="tyson"/>
+              <img src="/assets/img/ranch.png" alt="ranch"/>
+            </div>
+          
+          </div>
+          
+          <!-- botões de controle -->
+          <div class="botoes-controle">
+              <button class="botao-voltar"><</button>
+              <button class="botao-avancar">></button>
+          </div>
+        
+        </div>
+      
+      <!-- Carrossel -->
+      <section>
+        <div class="carrossel">
+          
+          <h1 class="titulo-categoria">
+            Brasil: Top 10 Filmes Hoje
+          </h1>
 
-    </body>
+          <div class="janela-carrossel">
 
+            <div class="container-carrossel">
+              <img src="/assets/img/furacao.png" alt=" Cris"/>
+              <img src="/assets/img/sobrevivencia.png" alt="Velozes e Furiosos 2"/>
+              <img src="/assets/img/ninho.png" alt=" Cris"/>
+              <img src="/assets/img/granturismo.png" alt=" Cris"/>
+              <img src="/assets/img/karetekid.png" alt=" Cris"/>
+            </div>
+          
+          </div>
+          
+          <!-- botões de controle -->
+          <div class="botoes-controle">
+              <button class="botao-voltar"><</button>
+              <button class="botao-avancar">></button>
+          </div>
+        
+        </div>
+
+              <!-- Carrossel -->
+      <section>
+        <div class="carrossel">
+          
+          <h1 class="titulo-categoria">
+            Brasil: Top 10 Series Hoje
+          </h1>
+
+          <div class="janela-carrossel">
+
+            <div class="container-carrossel">
+              <img src="/assets/img/round6.png" alt="round6"/>
+              <img src="/assets/img/stringer.png" alt="Stringer"/>
+              <img src="/assets/img/theroockie.png" alt="drhouse"/>
+              <img src="/assets/img/peaky.png" alt="peaky"/>
+              <img src="/assets/img/tyson.png" alt="tyson"/>
+            </div>
+          
+          </div>
+          
+          <!-- botões de controle -->
+          <div class="botoes-controle">
+              <button class="botao-voltar"><</button>
+              <button class="botao-avancar">></button>
+          </div>
+        
+        </div>
+        
+      
+      </section>
+      
+      <footer>
+        <p>&copy; Cineon+. Todos os direitos reservados</p>
+      </footer>
+    
+    </section>
+
+</body>
 </html>

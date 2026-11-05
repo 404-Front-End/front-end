@@ -1,0 +1,476 @@
+   /* variaveis globais */
+   :root {
+      /* COLORS */
+      --background_color_1: #000000;
+      --background_navbar_color: rgba(0, 0, 0, 0.541);
+      --borderline_navbar_color: rgba(99, 0, 145, 0.541);
+      --selection_color: rgba(121, 70, 168, 0.541);
+      --main_section_max_size_width: 2160px;
+   }
+
+   ::selection {
+      background: var(--selection_color);
+   }
+   
+   /* ----------------------------------------------------------------- */
+   
+   /* configuração global */
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      
+      /* font global */
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   /* body */
+   body {
+      background: var(--background_color_1);
+      
+      color: white;
+      min-width: 100vh;
+      overflow-x: hidden;
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   /* FORÇAR SCROLL "NAO MEXA" */
+   .space_test {
+         width: 100%;
+         height: 500px;
+         background-color: royalblue;
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   /* background animado gradient */
+   .background_gradient_general {
+      z-index: 0; /* camada 0*/
+      background: radial-gradient(#350231,#090213,#05000e,rgb(0, 0, 0));
+      width: 100%;
+      height: 100%;
+      position: fixed; /* posição fixa*/
+      transform: scale(1);
+      overflow-x: hidden; /* ocultar overflow x 1*/
+      overflow-y: hidden; /* ocultar overlow y*/
+      animation: loop_background_gradient 5s ease-out infinite;
+   }
+
+   /* ----------------------------------------------------------------- */
+   
+   /* seção geral de todos os elementos .main_section_all */
+   .main_section_all {
+      z-index: 1; /* camada 1*/
+      position: absolute;
+      width: 100%;
+      max-width: var(--main_section_max_size_width);
+   }
+
+   /* ----------------------------------------------------------------- */
+   
+   /* titulo geral */
+   .titulo-geral {
+      color: white;
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      width: fit-content;
+      margin-bottom: 1px;
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   /* NAVBAR DO SITE START */
+
+   .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      width: 100%;
+      padding: 15px 35px;
+      
+      background: transparent;
+      backdrop-filter: blur(12px);
+
+      /* border-bottom: 1px solid rgba(255, 255, 255, 0.08); */
+      
+      transition: 
+         background-color 0.4s ease, 
+         backdrop-filter 0.4s ease, 
+         border-color 0.4s ease;
+   }
+
+   .navbar.scrolled {
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(12px);
+      /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
+   }
+
+   /* ----------------------------------------------------------------- */
+   
+   /* configuração da logotipo */
+   .logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+   }
+
+   .logo > img {
+      display: block;
+      width: 150px;
+      height: auto;
+   }
+
+   /* ----------------------------------------------------------------- */
+   
+   /* seção menu */
+   .menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+   }
+
+   .menu > a {
+      color: white;
+      text-decoration: none;
+      
+      font-size: 1.4rem; /* tamanho do texto */
+      font-weight: 700; /* texto em negrito */
+
+      padding: 12px 15px;
+      border-radius: 20px;
+      
+      transition: 0.35s ease;
+   }
+
+   .menu > a:hover {
+      background-color: rgba(255, 255, 255, 0.12)
+   }
+
+   .menu > a.active {
+      background: linear-gradient(
+         135deg,
+         #6500c9,
+         #9400ff
+      );
+
+      box-shadow: 0 4px 15px rgba(145, 0, 255, 0.35);
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   /* ícone de pesquisa */
+   .search_box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      width: 40px;
+      height: 40px;
+
+      border-radius: 50%;
+      cursor: pointer;
+
+      transition: 0.2s ease;
+   }
+
+   .search_box:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+      transform: scale(1.1);
+   }
+
+   .search_box > input {
+      width: 200px;
+      height: 30px;
+      padding: 5px;
+      color: white;
+      background-color: transparent;
+      border: 2px solid white;
+      border-radius: 5px;
+   }
+
+   .search_icon {
+      width: 25px;
+      height: 25px;
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   /* Perfil */
+
+   .perfil-container {
+      position: relative;
+
+   }
+
+   .perfil_botao {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+   }
+
+   .perfil_label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   /* ícone da foto de perfil */
+
+   .foto-perfil {
+      width: 40px;
+      height: 40px;
+      border-radius: 7px;
+      object-fit: cover;
+   }
+
+   .perfil_botao .foto-perfil {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      transition: 0.3s ease;
+   }
+
+   .perfil_botao .seta {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.3s ease;
+   }
+   
+   .perfil_botao img{
+      width: 45px;
+      height: 45px;
+      /* border-radius: 4px; */
+   }
+   
+   .perfil_label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+   }
+   
+   .perfil_container:has(.menu-pf:checked) .dropdown {
+      display: block;
+      transform: translateY(10px) translateX(-10px);
+   }
+   
+   .perfil_container:has(.menu-pf:checked) .seta {
+      transform: rotate(180deg);
+   }
+   
+   /* ----------------------------------------------------------------- */
+
+   /* esconder checkbox */
+   .menu-pf {
+      display: none;
+   }
+   
+   /* ----------------------------------------------------------------- */
+
+   /* seção dropdown */
+
+   .dropdown {
+      position: absolute;
+      right: 0;
+
+      display: none;
+      flex-direction: column;
+      
+      width: 200px;
+      padding: 8px;
+
+      background: rgba(34, 34, 34, 0.97);
+      border-radius: 12px;
+
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+
+      transform: translateY(-10px);
+
+      transition: 0.3s ease;
+   }
+   
+   .dropdown a {
+      color: white;
+      text-decoration: none;
+      
+      padding: 12px;
+      border-radius: 8px;
+
+      display: block;
+      font-weight: 700;
+      font-size: 1rem; /* tamanho do texto */
+      transition: 0.25s ease;
+   }
+
+   .dropdown a:hover {
+      background: rgba(107, 107, 107, 0.25);
+   }
+
+   /* ----------------------------------------------------------------- */
+   
+   /* icone seta do dropdown */
+   .seta {
+      width: 15px;
+      height: 15px;
+      transition: transform 0.3s ease;
+   }
+
+   .seta:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+   }
+
+   /* ----------------------------------------------------------------- */
+   
+   /* footer */
+
+   footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      
+      font-size: 22px;
+      text-align: center;
+      height: 2.5rem;
+      
+      background-color: rgba(0, 0, 0, 0.37);
+      color: white;
+   }
+
+   /* ----------------------------------------------------------------- */
+
+   .main_content {
+      width: 100%;
+      /* min-height: calc(100vh - 80px); */
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      padding: 40px 20px;
+   }
+
+   .profile_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    text-align: center;
+}
+
+    .profile_content h1 {
+        color: white;
+        font-size: 36px;
+        font-weight: 700;
+
+        margin-bottom: 55px;
+    }
+
+    .profiles {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        gap: 35px;
+    }
+
+    .profile_card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .profile_avatar {
+        width: 145px;
+        height: 145px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 10px;
+        overflow: hidden;
+
+        transition: 0.3s ease;
+    }
+
+    .profile_avatar span {
+        color: white;
+        font-size: 65px;
+        font-weight: 700;
+        font-family: Arial, sans-serif;
+    }
+
+    .profile_card p {
+        color: #fdfdfd;
+        font-size: 25px;
+        font-weight: 600;
+
+        margin-top: 15px;
+        transition: 0.3s ease;
+    }
+
+    .avatar_giovanni {
+        background: linear-gradient(125deg, #6365fa, #110d36);
+        border-radius: 85px;
+    }
+    .avatar_heitor {
+        background: linear-gradient(145deg, #ff4800, #fcb86a);
+        border-radius: 85px;
+
+    }
+    .avatar_joao {
+        background: linear-gradient(145deg, #219c59, #00771049);
+        border-radius: 85px;
+    }
+    .avatar_yasmin1 {
+        background: linear-gradient(145deg, #cc4d04, #660411);
+        border-radius: 85px;
+    }
+    .avatar_julio {
+        background: linear-gradient(145deg, #8d8d8d, #000000);
+        border-radius: 85px;
+    }
+    .avatar_yasmin2 {
+        background:  #6f04e9;
+        border-radius: 85px;
+    }
+
+   /* ----------------------------------------------------------------- */
+   
+   /* ANIMAÇÃO DO BACKGROUND GRADIENT */
+   @keyframes loop_background_gradient {
+      /* estagios da animação */
+      0% {
+         transform: scale(1);
+      }
+      50% {
+         transform: scale(2);
+      }
+      100% {
+         transform: scale(1);
+      }
+   }
