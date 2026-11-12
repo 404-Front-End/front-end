@@ -50,7 +50,7 @@ CINEON+/
 │
 ├── css/
 │   ├── style.css
-│   └── estilos específicos
+│   └── páginas específicas
 │
 ├── js/
 │   └── script.js
