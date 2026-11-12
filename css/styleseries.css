@@ -494,7 +494,7 @@
             rgba(2, 2, 2, 0.4) 75%,
             transparent 100%
         ),
-        url("/assets/img/cris_season1.jpg");
+        url("../assets/img/cris_season1.jpg");
       
         background-size: cover;
         background-position: center;

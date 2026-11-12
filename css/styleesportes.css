@@ -494,7 +494,7 @@
             rgba(2, 2, 2, 0.4) 75%,
             transparent 100%
         ),
-        url("/assets/img/brasil2002.jpg");
+        url("../assets/img/brasil2002.jpg");
       
         background-size: cover;
         background-position: center;

@@ -494,7 +494,7 @@
             rgba(2, 2, 2, 0.4) 75%,
             transparent 100%
         ),
-        url("/assets/img/vingadoresultimato.jpg");
+        url("../assets/img/vingadoresultimato.jpg");
       
         background-size: cover;
         background-position: center;
